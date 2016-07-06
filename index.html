@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>React-mobile-datepicker by lanjingling0510</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">React-mobile-datepicker</h1>
+      <h2 class="project-tagline">一个简版的移动端时间选择器react组件</h2>
+      <a href="https://github.com/lanjingling0510/react-mobile-datepicker" class="btn">View on GitHub</a>
+      <a href="https://github.com/lanjingling0510/react-mobile-datepicker/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/lanjingling0510/react-mobile-datepicker/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="react-mobile-datepicker" class="anchor" href="#react-mobile-datepicker" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>react-mobile-datepicker</h1>
+
+<p><a href="https://travis-ci.org/lanjingling0510/react-mobile-datepicker"><img src="https://img.shields.io/travis/lanjingling0510/react-mobile-datepicker/master.svg?style=flat-square" alt="Travis"></a> <a href="https://www.npmjs.com/package/react-mobile-datepicker"><img src="https://img.shields.io/npm/v/react-mobile-datepicker.svg?style=flat-square" alt="npm package"></a> <a href="https://coveralls.io/github/lanjingling0510/react-mobile-datepicker"><img src="https://img.shields.io/coveralls/lanjingling0510/react-mobile-datepicker.svg?style=flat-square" alt="Coveralls"></a></p>
+
+<h2>
+<a id="一个移动端时间选择器react组件" class="anchor" href="#%E4%B8%80%E4%B8%AA%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%97%B6%E9%97%B4%E9%80%89%E6%8B%A9%E5%99%A8react%E7%BB%84%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>一个移动端时间选择器react组件</h2>
+
+<div>
+<img src="https://raw.githubusercontent.com/lanjingling0510/react-mobile-datepicker/master/.github/preview.gif" width="300">
+</div>
+
+<h2>
+<a id="安装" class="anchor" href="#%E5%AE%89%E8%A3%85" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>安装</h2>
+
+<p>Using <a href="https://www.npmjs.com/">npm</a>:</p>
+
+<pre><code>$ npm install react-mobile-datepicker --save
+</code></pre>
+
+<p>然后，使用模块加载工具流，支持common.js或ES2015模块,例如<a href="https://github.com/webpack/webpack">webpack</a></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// Using an ES6 transpiler like Babel</span>
+<span class="pl-k">import</span> <span class="pl-smi">DatePicker</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react-mobile-datepicker<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">'</span>react-mobile-datepicker/dist/mobile-datepicker.css<span class="pl-pds">'</span></span>; <span class="pl-c">// Make sure to import the default stylesheet</span>
+
+<span class="pl-c">// Not using an ES6 transpiler</span>
+<span class="pl-k">var</span> DatePicker <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>react-mobile-datepicker<span class="pl-pds">'</span></span>);
+<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>react-mobile-datepicker/dist/mobile-datepicker.css<span class="pl-pds">'</span></span>);</pre></div>
+
+<h2>
+<a id="使用" class="anchor" href="#%E4%BD%BF%E7%94%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用</h2>
+
+<h3>
+<a id="例子" class="anchor" href="#%E4%BE%8B%E5%AD%90" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>例子</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-smi">React</span>, { <span class="pl-smi">Component</span> } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> { <span class="pl-smi">render</span> } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react-dom<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> <span class="pl-smi">DatePicker</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>mobile-datepicker<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">'</span>react-mobile-datepicker/dist/mobile-datepicker.css<span class="pl-pds">'</span></span>; <span class="pl-c">// only needs to be imported once</span>
+
+<span class="pl-c">// Render the Calendar</span>
+<span class="pl-k">var</span> today <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Date</span>();
+<span class="pl-k">var</span> minDate <span class="pl-k">=</span> <span class="pl-c1">Number</span>(<span class="pl-k">new</span> <span class="pl-en">Date</span>()) <span class="pl-k">-</span> (<span class="pl-c1">24</span><span class="pl-k">*</span><span class="pl-c1">60</span><span class="pl-k">*</span><span class="pl-c1">60</span><span class="pl-k">*</span><span class="pl-c1">1000</span>) <span class="pl-k">*</span> <span class="pl-c1">7</span>; <span class="pl-c">// One week before today</span>
+
+
+
+<span class="pl-en">render</span>(
+    <span class="pl-k">&lt;</span>DatePicker
+        startDate<span class="pl-k">=</span>{today}
+        minDate<span class="pl-k">=</span>{minDate}
+        onSelect<span class="pl-k">=</span>{(<span class="pl-smi">time</span>) <span class="pl-k">=&gt;</span> { <span class="pl-en">console</span>.<span class="pl-c1">log</span>(time); }} <span class="pl-k">/</span><span class="pl-k">&gt;</span>,
+  <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">'</span>root<span class="pl-pds">'</span></span>)
+);</pre></div>
+
+<h2>
+<a id="prop-types" class="anchor" href="#prop-types" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prop Types</h2>
+
+<table>
+<thead>
+<tr>
+<th align="left">Property</th>
+<th align="left">Type</th>
+<th align="left">Default</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">btnColor</td>
+<td align="left">String</td>
+<td align="left">#fff</td>
+<td align="left">完成按钮颜色</td>
+</tr>
+<tr>
+<td align="left">dateColor</td>
+<td align="left">String</td>
+<td align="left">#fff</td>
+<td align="left">日期文字颜色</td>
+</tr>
+<tr>
+<td align="left">layerBackground</td>
+<td align="left">String</td>
+<td align="left">#ffa70b</td>
+<td align="left">背景颜色</td>
+</tr>
+<tr>
+<td align="left">date</td>
+<td align="left">Date</td>
+<td align="left">new Date()</td>
+<td align="left">初始日期</td>
+</tr>
+<tr>
+<td align="left">minDate</td>
+<td align="left">Date</td>
+<td align="left">前一周</td>
+<td align="left">最小日期</td>
+</tr>
+<tr>
+<td align="left">maxDate</td>
+<td align="left">Date</td>
+<td align="left">new Date()</td>
+<td align="left">最大日期</td>
+</tr>
+<tr>
+<td align="left">onSelect</td>
+<td align="left">Function</td>
+<td align="left">() =&gt; {}</td>
+<td align="left">点击完成后的回调函数, Date对象作为参数</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changelog</h2>
+
+<h2>
+<a id="v103---thu-23-jun-2016-132213-gmt" class="anchor" href="#v103---thu-23-jun-2016-132213-gmt" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>v1.0.3 - Thu, 23 Jun 2016 13:22:13 GMT</h2>
+
+<ul>
+<li>
+<a href="../../commit/5a93fe9">5a93fe9</a> [changed] 更新了READEME</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/lanjingling0510/react-mobile-datepicker">React-mobile-datepicker</a> is maintained by <a href="https://github.com/lanjingling0510">lanjingling0510</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
